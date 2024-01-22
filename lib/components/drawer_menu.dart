@@ -27,8 +27,13 @@ class _DrawerMenuState extends State<DrawerMenu> {
       body: SafeArea(
         child: Column(children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 50, horizontal: 65),
-            margin: EdgeInsets.only(right: 20, top: 50, bottom: 30),
+            padding: EdgeInsets.symmetric(
+                vertical: Get.height * 0.05, horizontal: Get.width * 0.16),
+            margin: EdgeInsets.only(
+              right: Get.width * 0.05,
+              top: Get.height * 0.13,
+              bottom: Get.height * 0.03,
+            ),
             decoration: BoxDecoration(
               color: AppTheme.primaryColor,
               borderRadius: BorderRadius.only(
@@ -38,7 +43,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
             child: Column(children: [
               Image.asset('assets/placeholder.png'),
-              Padding(padding: EdgeInsets.all(10)),
+              Padding(padding: EdgeInsets.all(Get.height * 0.01)),
               Text('feras'),
             ]),
           ),
@@ -70,7 +75,6 @@ class _DrawerMenuState extends State<DrawerMenu> {
         selectedColor: Colors.white,
         selectedTileColor: Colors.black38,
         selected: widget.currentItem == item,
-        minLeadingWidth: 20,
         leading: Icon(item.icon),
         title: Text(item.title),
         onTap: () => widget.onSelectedItem(item),

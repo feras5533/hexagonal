@@ -33,6 +33,7 @@ class _ZoomDrawerViewState extends State<ZoomDrawerView> {
           },
         ),
       ),
+      androidCloseOnBackTap: true,
     );
   }
 

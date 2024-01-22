@@ -70,9 +70,9 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     Container(
                       alignment: AlignmentDirectional.bottomCenter,
-                      padding: const EdgeInsets.only(bottom: 20),
+                      padding: EdgeInsets.only(bottom: Get.height * 0.03),
                       margin: EdgeInsets.symmetric(horizontal: 5),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           begin: AlignmentDirectional.bottomCenter,
                           end: AlignmentDirectional.center,
@@ -84,7 +84,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
-                      child: Text(
+                      child: const Text(
                         'Lorem ipsum',
                         style: TextStyle(
                           fontSize: 20,
@@ -131,10 +131,10 @@ class _HomeViewState extends State<HomeView> {
             titleText('Our Projects'),
             GridView.builder(
               itemCount: projects.length,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2),
               itemBuilder: (context, index) =>
                   projectsContainer(projects[index]),
             ),

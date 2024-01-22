@@ -18,7 +18,7 @@ class _FeedsViewState extends State<FeedsView> {
       appBar: customaAppbar(context: context),
       background: true,
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: 6,
         itemBuilder: (context, index) => customFeed(index),
       ),
     );
@@ -36,22 +36,22 @@ class _FeedsViewState extends State<FeedsView> {
               fit: BoxFit.cover,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 15),
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              margin: EdgeInsets.symmetric(horizontal: Get.width * 0.05),
+              padding: EdgeInsets.symmetric(horizontal: Get.width * 0.03),
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Text(
+                    padding: EdgeInsets.symmetric(vertical: Get.height * 0.015),
+                    child: const Text(
                       'Lorem ipsum',
                       style: TextStyle(fontSize: 25),
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a felis non mi imperdiet venenatis eget et felis. Suspendisse ultrices magna hendrerit ligula sagittis aliquet.....',
                     textAlign: TextAlign.center,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Column(children: [
@@ -65,7 +65,7 @@ class _FeedsViewState extends State<FeedsView> {
             ),
           ],
         ),
-        if (index != 9)
+        if (index != 5)
           Divider(
             color: Colors.grey,
             thickness: 2,

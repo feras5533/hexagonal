@@ -5,10 +5,11 @@ import 'package:quetzal_flutter/components/custom_scaffold.dart';
 import '/helpers/theme.dart';
 
 class ImageDetailsView extends StatefulWidget {
-  const ImageDetailsView({super.key, this.image, this.index});
-
   final image;
   final index;
+
+  const ImageDetailsView({super.key, this.image, this.index});
+
   @override
   State<ImageDetailsView> createState() => _ImageDetailsViewState();
 }
@@ -26,7 +27,7 @@ class _ImageDetailsViewState extends State<ImageDetailsView> {
                 tag: 'image${widget.index}',
                 child: Container(
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.elliptical(70, 50),
                       bottomRight: Radius.elliptical(70, 50),
@@ -53,7 +54,10 @@ class _ImageDetailsViewState extends State<ImageDetailsView> {
                 child: Container(
                   width: 50,
                   height: 50,
-                  margin: const EdgeInsets.only(left: 10, top: 40),
+                  margin: EdgeInsets.only(
+                    left: Get.width * 0.03,
+                    top: Get.height * 0.04,
+                  ),
                   decoration: const BoxDecoration(
                     color: Colors.black38,
                     borderRadius: BorderRadius.all(
@@ -73,24 +77,28 @@ class _ImageDetailsViewState extends State<ImageDetailsView> {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 15, right: 30, top: 15),
+                padding: EdgeInsets.only(
+                  left: Get.width * 0.05,
+                  right: Get.width * 0.07,
+                  top: Get.height * 0.03,
+                ),
                 child: Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     border: Border.all(width: 3),
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(50),
                     ),
                   ),
                   child: Icon(
                     Icons.location_pin,
-                    size: 40,
+                    size: Get.height * 0.05,
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 15),
-                child: Text(
+                padding: EdgeInsets.only(top: Get.height * 0.03),
+                child: const Text(
                   'Lorem ipsum',
                   style: TextStyle(
                     fontSize: 35,
