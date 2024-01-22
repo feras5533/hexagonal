@@ -1,12 +1,11 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quetzal_flutter/components/custom_scaffold.dart';
 
-import '../components/custom_snackbar.dart';
-import '../helpers/theme.dart';
-import '../repo/auth_repo.dart';
-import 'login_view.dart';
+import 'package:quetzal_flutter/components/custom_scaffold.dart';
+import 'package:quetzal_flutter/components/custom_snackbar.dart';
+import 'package:quetzal_flutter/helpers/theme.dart';
+import 'package:quetzal_flutter/view_model/auth_view_model.dart';
 
 class SignupView extends StatefulWidget {
   const SignupView({super.key});
@@ -56,32 +55,14 @@ class _SignupViewState extends State<SignupView> {
     setState(() {
       isLoading = true;
     });
-
-    AuthRequest request = AuthRequest(context: context);
-    var check = await request.register(
+    AuthViewModel request = AuthViewModel(context: context);
+    await request.signupViewModel(
       username: _userNameController.text,
       email: _emailController.text,
       password: _passwordController.text,
     );
-
-    Future.delayed(Duration(seconds: 1)).then((value) {
-      if (check) {
-        Get.off(() => LoginView());
-
-        customDialog(
-            title: 'the account created successfully',
-            context: context,
-            error: false);
-      } else {
-        customDialog(
-          title: 'somthing went wrong try again',
-          context: context,
-        );
-      }
-
-      setState(() {
-        isLoading = false;
-      });
+    setState(() {
+      isLoading = false;
     });
   }
 
@@ -149,7 +130,7 @@ class _SignupViewState extends State<SignupView> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: Get.width * 0.08),
                 child: Form(
                   key: _formState,
                   child: SizedBox(

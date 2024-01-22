@@ -13,12 +13,5 @@ customScaffold({
     backgroundColor: background ? AppTheme.seconderyColor : Colors.white,
     appBar: appBar,
     body: body,
-    // drawer: drawer
-    //     ? Drawer(
-    //         elevation: 0.0,
-    //         width: Get.width * 0.7,
-    //         child: const AppDrawer(),
-    //       )
-    //     : null
   );
 }

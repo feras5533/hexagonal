@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:quetzal_flutter/views/home_view.dart';
 
-import '/views/landing_view.dart';
+import 'views/splash_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const LandingView(),
+      home: const SplashView(),
     );
   }
 }
-//LandingView

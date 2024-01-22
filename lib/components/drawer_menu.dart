@@ -1,29 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quetzal_flutter/components/drawer_menu_mat.dart';
 
 import '/helpers/theme.dart';
 import '/views/welcome_view.dart';
-
-class MenuItem {
-  final String title;
-  final IconData icon;
-
-  const MenuItem(this.title, this.icon);
-}
-
-class MenuItems {
-  static const home = MenuItem('Home', Icons.home);
-  static const feeds = MenuItem('Feeds', Icons.table_rows);
-  static const profile = MenuItem('Profile', Icons.person);
-  // static const logout = MenuItem('Logout', Icons.logout);
-
-  static const all = <MenuItem>[
-    home,
-    feeds,
-    profile,
-    // logout,
-  ];
-}
 
 class DrawerMenu extends StatefulWidget {
   final MenuItem currentItem;

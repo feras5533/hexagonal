@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:quetzal_flutter/views/login_view.dart';
 import 'package:quetzal_flutter/views/signup_view.dart';
-
-import '/components/custom_scaffold.dart';
-
-import '/helpers/theme.dart';
+import 'package:quetzal_flutter/components/custom_scaffold.dart';
+import 'package:quetzal_flutter/helpers/theme.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});

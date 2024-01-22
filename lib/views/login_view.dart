@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quetzal_flutter/components/custom_snackbar.dart';
-import 'package:quetzal_flutter/helpers/prints.dart';
+import 'package:quetzal_flutter/view_model/auth_view_model.dart';
 
-import '../components/zoom_drawer.dart';
-import '../repo/auth_repo.dart';
 import '/helpers/theme.dart';
 import '/components/custom_scaffold.dart';
 
@@ -46,24 +44,12 @@ class _LoginViewState extends State<LoginView> {
     setState(() {
       isLoading = true;
     });
+    AuthViewModel request = AuthViewModel(context: context);
+    await request.loginViewModel(
+        username: _userNameController.text, password: _passwordController.text);
 
-    AuthRequest request = AuthRequest(context: context);
-    var loginCheck = await request.login(
-      username: _userNameController.text,
-      password: _passwordController.text,
-    );
-
-    printWarning('logloglog $loginCheck');
-
-    Future.delayed(Duration(seconds: 1)).then((value) {
-      if (loginCheck) {
-        Get.offAll(() => ZoomDrawerView());
-      } else {
-        customDialog(title: 'one or both fields are wrong', context: context);
-      }
-      setState(() {
-        isLoading = false;
-      });
+    setState(() {
+      isLoading = false;
     });
   }
 

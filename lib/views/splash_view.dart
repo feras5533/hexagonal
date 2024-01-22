@@ -2,17 +2,18 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quetzal_flutter/views/welcome_view.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
-class LandingView extends StatefulWidget {
-  const LandingView({super.key});
+import '/views/welcome_view.dart';
+
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
   @override
-  State<LandingView> createState() => _LandingViewState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _LandingViewState extends State<LandingView> {
+class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(milliseconds: 5800)).then(
