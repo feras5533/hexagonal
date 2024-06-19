@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:quetzal_flutter/components/drawer_menu_mat.dart';
-import 'package:quetzal_flutter/views/feeds_view.dart';
-import 'package:quetzal_flutter/views/home_view.dart';
-import 'package:quetzal_flutter/views/profile_view.dart';
+import '/components/drawer_menu_mat.dart';
+import '/views/feeds_view.dart';
+import '/views/home_view.dart';
+import '/views/profile_view.dart';
 
 import 'drawer_menu.dart';
 
@@ -40,11 +40,11 @@ class _ZoomDrawerViewState extends State<ZoomDrawerView> {
   getScreen() {
     switch (currentItem) {
       case MenuItems.home:
-        return HomeView();
+        return const HomeView();
       case MenuItems.feeds:
-        return FeedsView();
+        return const FeedsView();
       case MenuItems.profile:
-        return ProfileView();
+        return const ProfileView();
     }
   }
 }

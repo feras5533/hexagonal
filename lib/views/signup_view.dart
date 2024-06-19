@@ -1,11 +1,12 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:quetzal_flutter/components/custom_scaffold.dart';
-import 'package:quetzal_flutter/components/custom_snackbar.dart';
-import 'package:quetzal_flutter/helpers/theme.dart';
-import 'package:quetzal_flutter/view_model/auth_view_model.dart';
+import '/components/custom_scaffold.dart';
+import '/components/custom_snackbar.dart';
+import '/helpers/theme.dart';
+import '/view_model/auth_view_model.dart';
 
 class SignupView extends StatefulWidget {
   const SignupView({super.key});
@@ -75,13 +76,12 @@ class _SignupViewState extends State<SignupView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              const Text(
-                'Sign Up',
-                style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              const AutoSizeText('Sign Up',
+                  minFontSize: 25,
+                  maxFontSize: 30,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  )),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -89,12 +89,11 @@ class _SignupViewState extends State<SignupView> {
                     const Text(
                       'Start Your',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                       ),
                     ),
                     SizedBox(
-                      height: 60,
-                      width: 160,
+                      width: Get.width * 0.32,
                       child: AnimatedTextKit(
                         repeatForever: true,
                         pause: Duration.zero,
@@ -102,7 +101,7 @@ class _SignupViewState extends State<SignupView> {
                           FadeAnimatedText(
                             'Account',
                             textStyle: const TextStyle(
-                              fontSize: 40,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                             ),
                             textAlign: TextAlign.center,
@@ -110,7 +109,7 @@ class _SignupViewState extends State<SignupView> {
                           FadeAnimatedText(
                             'Design',
                             textStyle: const TextStyle(
-                              fontSize: 40,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                             ),
                             textAlign: TextAlign.center,
@@ -118,7 +117,7 @@ class _SignupViewState extends State<SignupView> {
                           FadeAnimatedText(
                             'Journy',
                             textStyle: const TextStyle(
-                              fontSize: 40,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                             ),
                             textAlign: TextAlign.center,
@@ -180,18 +179,19 @@ class _SignupViewState extends State<SignupView> {
                     },
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll(AppTheme.primaryColor),
+                          WidgetStatePropertyAll(AppTheme.primaryColor),
                     ),
                     child: isLoading
-                        ? Center(
+                        ? const Center(
                             child: CircularProgressIndicator(
                               color: Colors.black,
                             ),
                           )
-                        : const Text(
+                        : const AutoSizeText(
                             'Register',
+                            minFontSize: 18,
+                            maxFontSize: 25,
                             style: TextStyle(
-                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
                             ),
@@ -217,7 +217,11 @@ class _SignupViewState extends State<SignupView> {
     required ifEmpty,
   }) {
     return Container(
-      margin: EdgeInsets.only(top: Get.height * 0.04),
+      margin: EdgeInsets.only(
+        top: Get.height * 0.025,
+        left: Get.width * 0.03,
+        right: Get.width * 0.03,
+      ),
       child: TextFormField(
         controller: controller,
         obscureText: hidden,
@@ -299,8 +303,8 @@ class _SignupViewState extends State<SignupView> {
             ),
             contentPadding: EdgeInsets.only(
               left: Get.width * 0.1,
-              top: Get.height * 0.025,
-              bottom: Get.height * 0.025,
+              top: Get.height * 0.022,
+              bottom: Get.height * 0.022,
             ),
             suffixIcon: password
                 ? GestureDetector(

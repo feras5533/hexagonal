@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quetzal_flutter/components/drawer_menu_mat.dart';
+import '/components/drawer_menu_mat.dart';
 
 import '/helpers/theme.dart';
 import '/views/welcome_view.dart';
@@ -36,7 +36,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
             decoration: BoxDecoration(
               color: AppTheme.primaryColor,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(50),
                 bottomRight: Radius.circular(50),
               ),
@@ -44,7 +44,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
             child: Column(children: [
               Image.asset('assets/placeholder.png'),
               Padding(padding: EdgeInsets.all(Get.height * 0.01)),
-              Text('feras'),
+              const Text('feras'),
             ]),
           ),
           ...MenuItems.all.map(buildMenuItem).toList(),

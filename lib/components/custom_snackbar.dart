@@ -12,28 +12,28 @@ customDialog({
     builder: (context) {
       return Container(
         height: 50,
-        padding: EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.only(left: 20),
         decoration: BoxDecoration(
           border: Border.all(),
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(15),
           ),
           color: error ? Colors.grey.shade900 : Colors.green,
         ),
         child: Row(
           children: [
-            Icon(
+            const Icon(
               Icons.error_outline_outlined,
               color: Colors.white,
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             AutoSizeText(
               title,
-              minFontSize: 12,
-              maxFontSize: 20,
-              style: TextStyle(
+              minFontSize: 10,
+              maxFontSize: 13,
+              style: const TextStyle(
                 // fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -43,9 +43,9 @@ customDialog({
         ),
       );
     },
-    duration: Duration(seconds: 4),
+    duration: const Duration(seconds: 4),
     mobileSnackBarPosition: MobileSnackBarPosition.bottom,
-    mobilePositionSettings:
-        MobilePositionSettings(bottomOnAppearance: 25, bottomOnDissapear: -60),
+    mobilePositionSettings: const MobilePositionSettings(
+        bottomOnAppearance: 25, bottomOnDissapear: -60),
   ).show(context);
 }

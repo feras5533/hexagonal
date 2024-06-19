@@ -1,6 +1,6 @@
 {
-    "name": "quetzal_flutter",
-    "short_name": "quetzal_flutter",
+    "name": "hexagonal",
+    "short_name": "hexagonal",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

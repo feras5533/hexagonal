@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:quetzal_flutter/helpers/theme.dart';
+import '/helpers/theme.dart';
 
 customaAppbar({required context}) {
   return AppBar(
@@ -12,7 +12,7 @@ customaAppbar({required context}) {
       onPressed: () {
         ZoomDrawer.of(context)!.toggle();
       },
-      icon: Icon(Icons.menu),
+      icon: const Icon(Icons.menu),
     ),
   );
 }

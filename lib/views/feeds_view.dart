@@ -27,39 +27,47 @@ class _FeedsViewState extends State<FeedsView> {
   customFeed(index) {
     return Column(
       children: [
-        Stack(
+        Column(
           children: [
-            Image.asset(
-              'assets/feeds.jpg',
-              width: Get.width,
-              height: Get.height * 0.23,
-              fit: BoxFit.cover,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: Get.width * 0.05),
-              padding: EdgeInsets.symmetric(horizontal: Get.width * 0.03),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: Get.height * 0.015),
-                    child: const Text(
-                      'Lorem ipsum',
-                      style: TextStyle(fontSize: 25),
-                    ),
-                  ),
-                  const Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a felis non mi imperdiet venenatis eget et felis. Suspendisse ultrices magna hendrerit ligula sagittis aliquet.....',
-                    textAlign: TextAlign.center,
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+            Stack(
+              children: [
+                Image.asset(
+                  'assets/feeds.jpg',
+                  width: Get.width,
+                  height: Get.height * 0.25,
+                  fit: BoxFit.cover,
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: Get.width * 0.025),
+                  padding: EdgeInsets.symmetric(horizontal: Get.width * 0.03),
+                  child: Column(
                     children: [
-                      Column(children: [
-                        Text('username'),
-                        Text('21-01-223'),
-                      ]),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: Get.height * 0.015),
+                        child: const Text(
+                          'Lorem ipsum',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      const Text(
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a felis non mi imperdiet venenatis eget et felis. Suspendisse ultrices magna hendrerit ligula sagittis aliquet.....',
+                        textAlign: TextAlign.center,
+                      ),
                     ],
                   ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: Get.width * 0.035),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Column(children: [
+                    Text('username'),
+                    Text('21-01-2023'),
+                  ]),
                 ],
               ),
             ),

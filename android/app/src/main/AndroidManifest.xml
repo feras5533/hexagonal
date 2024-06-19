@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="quetzal_flutter"
+        android:label="hexagonal"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

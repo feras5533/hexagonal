@@ -134,7 +134,7 @@ class _ProfileViewState extends State<ProfileView> {
             children: [
               Text(
                 main,
-                style: TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 18),
               ),
               Text(sub),
             ],

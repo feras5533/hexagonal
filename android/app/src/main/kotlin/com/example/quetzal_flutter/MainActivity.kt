@@ -1,4 +1,4 @@
-package com.example.quetzal_flutter
+package com.example.hexagonal
 
 import io.flutter.embedding.android.FlutterActivity
 

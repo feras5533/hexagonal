@@ -1,7 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quetzal_flutter/components/custom_snackbar.dart';
-import 'package:quetzal_flutter/view_model/auth_view_model.dart';
+import '/components/custom_snackbar.dart';
+import '/view_model/auth_view_model.dart';
 
 import '/helpers/theme.dart';
 import '/components/custom_scaffold.dart';
@@ -87,19 +88,20 @@ class _LoginViewState extends State<LoginView> {
                 clipBehavior: Clip.antiAlias,
                 child: SingleChildScrollView(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      const AutoSizeText(
                         'WELCOME',
+                        minFontSize: 30,
+                        maxFontSize: 40,
                         style: TextStyle(
-                          fontSize: 50,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Text(
+                      const AutoSizeText(
                         'BACK',
+                        minFontSize: 30,
+                        maxFontSize: 40,
                         style: TextStyle(
-                          fontSize: 50,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -143,19 +145,20 @@ class _LoginViewState extends State<LoginView> {
                               login();
                             },
                             style: ButtonStyle(
-                              backgroundColor: MaterialStatePropertyAll(
-                                  AppTheme.primaryColor),
+                              backgroundColor:
+                                  WidgetStatePropertyAll(AppTheme.primaryColor),
                             ),
                             child: isLoading
-                                ? Center(
+                                ? const Center(
                                     child: CircularProgressIndicator(
                                       color: Colors.black,
                                     ),
                                   )
-                                : const Text(
+                                : const AutoSizeText(
                                     'Login',
+                                    minFontSize: 18,
+                                    maxFontSize: 25,
                                     style: TextStyle(
-                                      fontSize: 25,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black,
                                     ),
@@ -184,7 +187,11 @@ class _LoginViewState extends State<LoginView> {
     required ifEmpty,
   }) {
     return Container(
-      margin: EdgeInsets.only(top: Get.height * 0.04),
+      margin: EdgeInsets.only(
+        top: Get.height * 0.025,
+        left: Get.height * 0.025,
+        right: Get.height * 0.025,
+      ),
       child: TextFormField(
         controller: controller,
         obscureText: hidden,

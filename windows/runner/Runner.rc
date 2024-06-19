@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "quetzal_flutter" "\0"
+            VALUE "FileDescription", "hexagonal" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "quetzal_flutter" "\0"
+            VALUE "InternalName", "hexagonal" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "quetzal_flutter.exe" "\0"
-            VALUE "ProductName", "quetzal_flutter" "\0"
+            VALUE "OriginalFilename", "hexagonal.exe" "\0"
+            VALUE "ProductName", "hexagonal" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import '/helpers/prints.dart';
 
 class AuthRequest {
+  String baseUrl = '127.0.0.1:8000';
+
   late BuildContext context;
   AuthRequest({
     required this.context,
@@ -12,7 +14,7 @@ class AuthRequest {
     required username,
     required password,
   }) async {
-    var url = 'http://10.0.2.2:8000/api/login';
+    var url = 'http://$baseUrl/api/login';
     Map<String, String> headers = {
       "Accept": "application/json",
       "Access-Control-Allow-Origin": "*",
@@ -25,7 +27,7 @@ class AuthRequest {
       Uri.parse(url),
       headers: headers,
       body: {
-        'user_name': username,
+        'name': username,
         'password': password,
       },
     ).then(
@@ -45,7 +47,7 @@ class AuthRequest {
     required email,
     required password,
   }) async {
-    var url = 'http://10.0.2.2:8000/api/register';
+    var url = 'http://$baseUrl/api/register';
     Map<String, String> headers = {
       "Accept": "application/json",
       "Access-Control-Allow-Origin": "*",
@@ -59,7 +61,7 @@ class AuthRequest {
       Uri.parse(url),
       headers: headers,
       body: {
-        'user_name': username,
+        'name': username,
         'email': email,
         'password': password,
       },

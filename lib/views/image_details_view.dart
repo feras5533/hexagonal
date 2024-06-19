@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quetzal_flutter/components/custom_scaffold.dart';
+import '/components/custom_scaffold.dart';
 
 import '/helpers/theme.dart';
 

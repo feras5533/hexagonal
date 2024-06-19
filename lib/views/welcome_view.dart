@@ -1,10 +1,12 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:quetzal_flutter/views/login_view.dart';
-import 'package:quetzal_flutter/views/signup_view.dart';
-import 'package:quetzal_flutter/components/custom_scaffold.dart';
-import 'package:quetzal_flutter/helpers/theme.dart';
+import '../components/custom_snackbar.dart';
+import '/views/login_view.dart';
+import '/views/signup_view.dart';
+import '/components/custom_scaffold.dart';
+import '/helpers/theme.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
@@ -130,25 +132,33 @@ class _WelcomeViewState extends State<WelcomeView>
                       customButton(
                         function: () {
                           Get.to(
-                            () => LoginView(),
+                            () => const LoginView(),
                           );
                         },
                         title: 'Login',
                       ),
                       customButton(
-                        function: () {},
+                        function: () {
+                          customDialog(
+                              title: 'Not Available At The Moment',
+                              context: context);
+                        },
                         title: 'continue with Apple',
                         apple: true,
                       ),
                       customButton(
-                        function: () {},
+                        function: () {
+                          customDialog(
+                              title: 'Not Available At The Moment',
+                              context: context);
+                        },
                         title: 'continue with Google',
                         google: true,
                       ),
                       customButton(
                         function: () {
                           Get.to(
-                            () => SignupView(),
+                            () => const SignupView(),
                           );
                         },
                         title: 'Sign up',
@@ -179,7 +189,7 @@ class _WelcomeViewState extends State<WelcomeView>
       child: ElevatedButton(
         onPressed: function,
         style: ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(AppTheme.primaryColor),
+          backgroundColor: WidgetStatePropertyAll(AppTheme.primaryColor),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -192,11 +202,12 @@ class _WelcomeViewState extends State<WelcomeView>
                         color: Colors.black,
                       )
                     : const SizedBox(),
-            Text(
+            AutoSizeText(
               title,
               textAlign: TextAlign.center,
+              minFontSize: 15,
+              maxFontSize: 20,
               style: const TextStyle(
-                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quetzal_flutter/components/custom_snackbar.dart';
-import 'package:quetzal_flutter/components/zoom_drawer.dart';
-import 'package:quetzal_flutter/repo/auth_repo.dart';
-import 'package:quetzal_flutter/views/login_view.dart';
+import '/components/custom_snackbar.dart';
+import '/components/zoom_drawer.dart';
+import '/repo/auth_repo.dart';
+import '/views/login_view.dart';
 
 class AuthViewModel {
   late BuildContext context;
@@ -22,7 +22,7 @@ class AuthViewModel {
     );
 
     if (loginCheck) {
-      Get.offAll(() => ZoomDrawerView());
+      Get.offAll(() => const ZoomDrawerView());
     } else {
       customDialog(title: 'one or both fields are wrong', context: context);
     }
@@ -41,7 +41,7 @@ class AuthViewModel {
     );
 
     if (check) {
-      Get.off(() => LoginView());
+      Get.off(() => const LoginView());
 
       customDialog(
           title: 'the account created successfully',

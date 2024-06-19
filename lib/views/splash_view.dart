@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -46,12 +47,20 @@ class _SplashViewState extends State<SplashView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                  const AutoSizeText(
                     'Where you can show your',
+                    minFontSize: 25,
+                    maxFontSize: 30,
                     style: TextStyle(
-                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
+                  // const Text(
+                  //   'Where you can show your',
+                  //   style: TextStyle(
+                  //     fontSize: 30,
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 70,
                     child: AnimatedTextKit(
@@ -61,7 +70,7 @@ class _SplashViewState extends State<SplashView> {
                         FadeAnimatedText(
                           'Creativity',
                           textStyle: const TextStyle(
-                            fontSize: 40,
+                            fontSize: 25,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
@@ -69,7 +78,7 @@ class _SplashViewState extends State<SplashView> {
                         FadeAnimatedText(
                           'Design',
                           textStyle: const TextStyle(
-                            fontSize: 40,
+                            fontSize: 25,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
@@ -77,7 +86,7 @@ class _SplashViewState extends State<SplashView> {
                         FadeAnimatedText(
                           'Ideas',
                           textStyle: const TextStyle(
-                            fontSize: 40,
+                            fontSize: 25,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,

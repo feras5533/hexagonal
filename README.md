@@ -1,4 +1,4 @@
-# quetzal_flutter
+# hexagonal
 
 A new Flutter project.
 
@@ -6,11 +6,13 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+to make the api responses work, go to repo/auth_repo.dart,
+then you need to change the base url depending on where you
+want to open the app, if it is on a physical phone use the
+command ipconfig to get the IPv4 Address and use it instead
+of 127.0.0.1, if it was on an emulator use 10.0.2.2 instead.
+same goes to the laravel file you need to change the APP_URL
+ to what you put here (the physical address or the emulator
+ address) and contact me using the cv contact details if you
+ faced any problem
+-feras

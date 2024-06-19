@@ -62,7 +62,7 @@ class _HomeViewState extends State<HomeView> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
                       child: Hero(
                         tag: 'image$realIndex',
                         child: Image.asset(carousel[index]),
@@ -71,7 +71,7 @@ class _HomeViewState extends State<HomeView> {
                     Container(
                       alignment: AlignmentDirectional.bottomCenter,
                       padding: EdgeInsets.only(bottom: Get.height * 0.03),
-                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
                       decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           begin: AlignmentDirectional.bottomCenter,
@@ -216,7 +216,7 @@ class _HomeViewState extends State<HomeView> {
               shadows: [
                 BoxShadow(
                   color: Colors.grey.shade400,
-                  offset: Offset(5, 5),
+                  offset: const Offset(5, 5),
                   blurRadius: 5,
                 ),
               ],
@@ -239,7 +239,7 @@ class _HomeViewState extends State<HomeView> {
     return Column(
       children: [
         SizedBox(
-          width: 150,
+          width: Get.width * 0.35,
           child: Image.asset(
             image,
           ),
